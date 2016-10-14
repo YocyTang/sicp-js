@@ -12,14 +12,14 @@ function fastMulti(a, b){
 	function double(n){
 		return n + n
 	}
-	function havle(n){
+	function halve(n){
 		return n /2
 	}
 	function isEven(n){
 		return n%2 ===0
 	}
 	if(isEven(b)){
-		return double(fastMulti( a, havle(b)))
+		return double(fastMulti( a, halve(b)))
 	}else{
 		return a+fastMulti(a, b-1)
 	}
