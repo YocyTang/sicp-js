@@ -10,13 +10,21 @@ function fixedPoint(fn, firstTry){
 	function isClosed(a, b){
 		return abs(a-b)<tolerance
 	}
-	return function try(guess){
+	return function tryTest(guess){
+
 		var next = fn(guess)
 		if(isClosed(guess, next)){
 			return next
 		}else {
-			return try(next)
+			return tryTest(next)
 		}
 	}(firstTry)
 }
+//利用不动点函数求一个数的根，平均阻尼
+function sqr(x){
+	return fixedPoint(function(y){
+			return (y+x/y)/2	
+	}, 1)
+}
 
+console.log(sqr(2))
