@@ -15,9 +15,17 @@ function car(z){
 function cdr(z){
 	return z(1)
 }
-
-module.exports={
-	cons,
-	car,
-	cdr
+function list(){
+	var arr = [].slice.call(arguments)
+	var n = arr.length
+	var ret
+	for(var i = n-1; i>=0; i--){
+		if( i === n-1){
+			ret = cons(arr[i], null)
+		}
+		ret = cons(arr[i],ret)
+	}
+	return ret
 }
+var a = list(1,2,3)
+console.log(car(cdr(a)))
