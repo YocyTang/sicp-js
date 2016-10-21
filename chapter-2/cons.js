@@ -23,7 +23,9 @@ function list(){
 		if( i === n-1){
 			ret = cons(arr[i], null)
 		}
-		ret = cons(arr[i],ret)
+		else{
+			ret = cons(a[i], ret)
+		}
 	}
 	return ret
 }
