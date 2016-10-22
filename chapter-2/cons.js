@@ -29,5 +29,27 @@ function list(){
 	}
 	return ret
 }
+ function display(list){
+	while(list){
+		console.log(car(list))
+		list = cdr(list)
+	}
+		
+ }
+ function isPairs(a){
+ 	try{
+ 		if((typeof(car(a))=='number') &&(typeof((cdr(a)==='number'))|| cdr(a) === null)){
+ 			return true
+ 		}else{
+ 			return false
+ 		}
+ 	}catch(e){
+ 		return false 
+ 	}
+ }
 var a = list(1,2,3)
-console.log(car(cdr(a)))
+
+console.log(isPairs(cons(1,2)))
+console.log(isPairs(cons(1,null)))
+console.log(isPairs(cons(null, 1)))
+console.log(isPairs(1))
