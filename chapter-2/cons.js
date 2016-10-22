@@ -24,7 +24,7 @@ function list(){
 			ret = cons(arr[i], null)
 		}
 		else{
-			ret = cons(a[i], ret)
+			ret = cons(arr[i], ret)
 		}
 	}
 	return ret
