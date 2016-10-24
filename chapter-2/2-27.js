@@ -37,7 +37,16 @@ function isPairs(a){
  		return false 
  	}
  }
-
+function reverse(list){
+	function iter(list, res){
+		if(list === null){
+			return res
+		}else{
+			return iter(cdr(list), cons(car(list), res))
+		}
+	}
+	return iter(list, null)
+}
 
  function deepReverse(a){
  	if(a === null){
