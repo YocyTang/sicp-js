@@ -29,12 +29,13 @@ function list(){
 	}
 	return ret
 }
- function display(list){
-	while(list){
-		console.log(car(list))
-		list = cdr(list)
-	}
-		
+function isPairs(a){
+ 	try{
+ 		car(a)
+ 		return true
+ 	}catch(e){
+ 		return false 
+ 	}
  }
  function isPairs(a){
  	try{
